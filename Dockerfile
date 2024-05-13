@@ -16,7 +16,7 @@ COPY . .
 # Need to tell what command should run when this image starts app as a container
 # "--host", "0.0.0.0" --> allows an external client to the container to make a request to the flask app running in the container
 #CMD ["flask", "run", "--host", "0.0.0.0"]
-CMD ["gunicorn", "--bind", "0.0.0.0.80", "app:create_app()"]
+CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:create_app()"]
 
 # Then in terminal:
 # 'docker build -t image_name .'
