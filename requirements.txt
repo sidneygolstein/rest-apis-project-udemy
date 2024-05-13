@@ -1,0 +1,10 @@
+# Contains every python librairies that the project will use
+
+flask
+flask-smorest           # Flask smorest is a database-agnostic framework library to create REST APIs
+python-dotenv
+sqlalchemy              # For SQL DB
+flask-sqlalchemy        # For SQL DB
+flask-jwt-extended      # For auth
+passlib                 # Library to hash password
+flask-migrate

@@ -1,0 +1,16 @@
+# DOCKER COMPOSE
+# Allow to start multiple docker containers at the same time specifying configurations for each one and dependencies between them
+
+# yml is an easy language, always key value pairs without {}, and with indentation to outline relations
+version: '3'
+services:
+  web:
+    build: . # Build file is in the current directory
+    ports: 
+      - "5005:5000"
+    volumes: # Copy and keep in sync the current directory with the app directory inside the container
+      - .:/app
+
+
+# docker compose up
+# docker compose up --build --force--recreate --no-deps service_name (here 'web')
