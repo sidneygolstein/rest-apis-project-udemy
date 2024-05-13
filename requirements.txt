@@ -9,3 +9,4 @@ flask-jwt-extended      # For auth
 passlib                 # Library to hash password
 flask-migrate
 gunicorn                # To run Docker with better performance than the build in flask environment
+psycopg2-binary

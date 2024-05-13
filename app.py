@@ -5,6 +5,7 @@ from flask import Flask, jsonify
 from flask_smorest import Api 
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
+from dotenv import load_dotenv 
 
 
 from db import db
@@ -29,7 +30,7 @@ from resources.user import blp as UserBlueprint
 def create_app(db_url = None):
     # Creation of a Flask app
     app = Flask(__name__)               # Does a lot of things, including being able to run the app ' flask.run ' run the app
-    print(__name__)
+    load_dotenv()
 
 
     ##################################################################################################################################

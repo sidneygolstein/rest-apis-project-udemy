@@ -10,7 +10,19 @@ services:
       - "5005:5000"
     volumes: # Copy and keep in sync the current directory with the app directory inside the container
       - .:/app
-
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=myapp
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
 
 # docker compose up
 # docker compose up --build --force--recreate --no-deps service_name (here 'web')
