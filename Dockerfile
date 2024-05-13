@@ -5,17 +5,18 @@
 #   - Run the flask app 
 
 FROM python:3.12
-EXPOSE 5000
+# EXPOSE 5000
 # Copy app.py into the image so that we can then run it 
 WORKDIR /app            
 # Copy requirements.txt into the current folder ('.') which is /app
 COPY ./requirements.txt requirements.txt
-RUN python3 -m pip install -r requirements.txt 
+RUN python3 -m pip install --no-cache-dir --upgrade -r requirements.txt 
 # Copy everything ('.') into the current directory ('/app' or '.' since we are currently in /app) 
 COPY . .          
 # Need to tell what command should run when this image starts app as a container
 # "--host", "0.0.0.0" --> allows an external client to the container to make a request to the flask app running in the container
-CMD ["flask", "run", "--host", "0.0.0.0"]
+#CMD ["flask", "run", "--host", "0.0.0.0"]
+CMD ["gunicorn", "--bind", "0.0.0.0.80", "app:create_app()"]
 
 # Then in terminal:
 # 'docker build -t image_name .'
