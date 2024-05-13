@@ -18,7 +18,7 @@ class ItemModel(db.Model):
     name = db.Column(db.String(80), unique = True, nullable = False)                    # nullable = False --> items must have names, unique = True --> items must
                                                                                         # have different names
     description = db.Column(db.String)
-    price = db.Column(db.Float(precision = 2), unique = False, nullable = False)
+    price = db.Column(db.Float(precision = 5), unique = False, nullable = False)
     store_id = db.Column(db.Integer, db.ForeignKey("stores.id") ,unique = False, nullable = False)     # Will be a link between the item table and the store table. 
                                                                                                         # This value will have to match the id value in the store table  
                                                                                                         # db.ForeignKey(table.column) allows to map that a item has

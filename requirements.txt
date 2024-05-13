@@ -8,5 +8,5 @@ flask-sqlalchemy        # For SQL DB
 flask-jwt-extended      # For auth
 passlib                 # Library to hash password
 flask-migrate
-gunicorn                # To run Docker with better performance than the build in flask environment
+gunicorn                # To run Docker with better performance than the build in flask dev environment (use to deploy the app)
 psycopg2-binary
