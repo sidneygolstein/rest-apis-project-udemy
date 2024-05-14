@@ -19,8 +19,12 @@ COPY . .
 # To deploy code locally
 #CMD ["flask", "run", "--host", "0.0.0.0"]      # To run the pp with the flask build in dev server
 
-# To deploy code not locally
-CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:create_app()"]    
+# To deploy code with gunicorn
+#CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:create_app()"]    
+
+
+CMD ["/bin/bash", "docker-entrypoint.sh"]
+
 
 # Then in terminal:
 # 'docker build -t image_name .'
