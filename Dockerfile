@@ -15,7 +15,7 @@ RUN python3 -m pip install --no-cache-dir --upgrade -r requirements.txt
 COPY . .          
 # Need to tell what command should run when this image starts app as a container
 # "--host", "0.0.0.0" --> allows an external client to the container to make a request to the flask app running in the container
-#CMD ["flask", "run", "--host", "0.0.0.0"]
+#CMD ["flask", "run", "--host", "0.0.0.0"]      # To run the pp with the flask build in dev server
 CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:create_app()"]
 
 # Then in terminal:
