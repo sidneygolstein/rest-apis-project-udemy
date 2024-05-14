@@ -1,5 +1,5 @@
 # DOCKER COMPOSE
-# Allow to start multiple docker containers at the same time specifying configurations for each one and dependencies between them
+# Allow to start multiple docker containers at the same time specifying configurations for each one and dependencies between them. Also used to start the database
 
 # yml is an easy language, always key value pairs without {}, and with indentation to outline relations
 version: '3'
@@ -7,7 +7,7 @@ services:
   web:
     build: . # Build file is in the current directory
     ports: 
-      - "5005:5000"
+      - "5001:80"
     volumes: # Copy and keep in sync the current directory with the app directory inside the container
       - .:/app
     depends_on:
@@ -21,6 +21,8 @@ services:
       - POSTGRES_DB=myapp
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 volumes:
   postgres_data:
 

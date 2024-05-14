@@ -15,9 +15,8 @@ docker compose up --build --force-recreate --no-deps db
 
 
 ## How to connect with a client database
-Create a new conection to the following URL:
+Create a new conection to the following URL, in '.env':
 ```
 postgres://USER:PASSWORD@INTERNAL_HOST:PORT/DATABASE
 ```
 Where USER, PASSWORD, INTERNAL_HOST, PORT, and DATABASE depend on the client database
- 
