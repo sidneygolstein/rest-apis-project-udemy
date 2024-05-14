@@ -6,11 +6,6 @@
 docker run -dp 5005:5000 -w /app -v "$(pwd):/app" IMAGE_NAME sh -c "flask run --host 0.0.0.0"
 ```
 
-## How to run the docker file with gunicorn (for deployment)
-```
-CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:create_app()"]    
-```
-
 ## How to re-create the image of a database
 ```
 docker compose up --build --force-recreate --no-deps web
