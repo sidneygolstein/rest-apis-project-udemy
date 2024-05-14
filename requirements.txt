@@ -7,6 +7,6 @@ sqlalchemy              # For SQL DB
 flask-sqlalchemy        # For SQL DB
 flask-jwt-extended      # For auth
 passlib                 # Library to hash password
-flask-migrate
+flask-migrate           # For db migration. It's the connection between alembic and flask
 gunicorn                # To run Docker with better performance than the build in flask dev environment (use to deploy the app)
 psycopg2-binary
