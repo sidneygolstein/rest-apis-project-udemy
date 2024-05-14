@@ -7,7 +7,7 @@ services:
   web:
     build: . # Build file is in the current directory
     ports: 
-      - "5001:80"
+      - "5005:80"
     volumes: # Copy and keep in sync the current directory with the app directory inside the container
       - .:/app
     depends_on:
@@ -21,8 +21,6 @@ services:
       - POSTGRES_DB=myapp
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
 volumes:
   postgres_data:
 
